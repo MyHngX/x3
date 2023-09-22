@@ -1,0 +1,67 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  padding: 25px;
+  padding-top: 85px;
+
+  .gridItem{
+    height: 200px;
+    background: gray;
+
+    border-radius: 8px;
+  }
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: gray;
+  }
+  .dragging {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  @media screen and (max-width: 1200px) {
+   
+  }
+  @media screen and (max-width: 992px) {
+   grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    
+  }
+  @media screen and (max-width: 568px) {
+    grid-template-columns: none;
+    padding-top: 90px;
+    .gridItem{
+      height: 300px;
+    }
+  }
+}
+
+
+.nav{
+  background: #000000a1;
+  width: 100%;
+  position: fixed;
+  padding: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  justify-content: center;
+
+  input{
+    height: 35px;
+    width: 300px;
+    padding: 6px 12px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    @media screen and (max-width: 568px) {
+      width: 100%;
+     
+    }
+  }
+ 
+}
