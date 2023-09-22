@@ -20,7 +20,7 @@ export default function Login() {
   const handleSubmission = (e) => {
     e.preventDefault();
     const { email, password } = values;
-console.log(validEmail, "ger")
+
     if (email !== validEmail || password !== validPassword) setError(true);
     else {
       sessionStorage.setItem("authenticated", true);
