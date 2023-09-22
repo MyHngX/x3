@@ -11,11 +11,13 @@ export default function Nav({ searchVal, setValue }) {
   return (
     <nav className={style.nav}>
       <input
-        placeholder="Search tags: 'grey', 'purple', 'dark'. "
+        placeholder="Search by tags: 'grey', 'purple', 'dark'. "
         value={searchVal}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button type="button" className={style.signOut} onClick={() => logOut()} >Log out</button>
+      <button type="button" className={style.signOut} onClick={() => logOut()}>
+        Log out
+      </button>
     </nav>
   );
 }

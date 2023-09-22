@@ -50,7 +50,7 @@
   padding: 25px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   z-index: 1;
 
   input{
@@ -64,6 +64,14 @@
       width: 100%;
      
     }
+  }
+  .signOut{
+    width: max-content;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #fff;
+    color: #000;
+    border: none;
   }
  
 }
