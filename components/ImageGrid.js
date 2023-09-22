@@ -5,6 +5,7 @@ import style from "./style.module.scss";
 import Nav from "./Nav";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Modal from "./Modal";
 
 function SkeletonLoader() {
   return (
@@ -65,15 +66,14 @@ function GridImageDisplay() {
     <>
       <Nav searchVal={searchVal} setValue={setValue} />
       {images.length == 0 ? (
-        <div className={style.error}>
-          <div className={style.content} >
-            <p>
-              No matching images found <br />
-              Available tags: "Gray", "Purple", "Dark".
-            </p>
-            <button onClick={() => setValue("")} >Close</button>
-          </div>
-        </div>
+        <Modal
+          text={
+            "No matching images found"
+          }
+          extra="Available tags: 'Gray', 'Purple', 'Dark'."
+          btnVal={"Clear"}
+          handleClick={() => setValue("")}
+        />
       ) : (
         <div className={style.gridContainer}>
           {images.map((imageUrl, index) => (
