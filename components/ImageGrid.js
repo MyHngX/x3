@@ -81,7 +81,7 @@ function GridImageDisplay() {
             {!imageUrl ? (
               <SkeletonLoader />
             ) : (
-              <img src={imageUrl.path} alt={`Image ${index}`} />
+              <img src={imageUrl.path || "https://res.cloudinary.com/olasumboeniola/image/upload/v1695371060/images/grey-2_cew7xi.jpg" } alt={`Image ${index}`} />
             )}
           </div>
         ))}
