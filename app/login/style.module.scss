@@ -4,9 +4,8 @@
   display: flex;
   position: relative;
   font-family: Telegraf;
-   @media screen and (max-width: 992px){
+  @media screen and (max-width: 992px) {
     flex-direction: column;
-    height: auto;
   }
   .imageOverlay {
     position: absolute;
@@ -22,11 +21,11 @@
     padding-top: 25px;
     overflow-y: auto;
 
-    @media screen and (max-width: 1200px){
+    @media screen and (max-width: 1200px) {
       flex: 45%;
     }
-    @media screen and (max-width: 992px){
-    display: none;
+    @media screen and (max-width: 992px) {
+      display: none;
     }
     &::-webkit-scrollbar {
       display: none;
@@ -52,13 +51,13 @@
         img {
           width: 100%;
           height: 100%;
-          transition: transform .5s ease;
+          transition: transform 0.5s ease;
           border-radius: 6px;
           cursor: pointer;
         }
         &:hover img {
-            transform: scale(1.05);
-          }
+          transform: scale(1.05);
+        }
       }
     }
     .column {
@@ -73,11 +72,27 @@
     display: flex;
     justify-content: center;
     padding-top: 104px;
-    @media screen and (max-width: 1200px){
+    @media screen and (max-width: 1200px) {
       flex: calc(100% - 45%);
+    }
+    @media screen and (max-width: 992px) {
+      padding-top: 50px;
+      border-radius: 0px;
+      flex-grow: 1;
     }
     .loginCont {
       width: 50%;
+      @media screen and (max-width: 992px) {
+        width: 80%;
+      }
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 50px;
+      }
+      @media screen and (max-width: 411px) {
+        width: 100%;
+        padding: 25px;
+      }
       .title {
         color: #000;
         font-weight: 800;
@@ -119,7 +134,7 @@
   }
 }
 
-.error{
+.error {
   margin-bottom: 20px;
   color: red;
 }

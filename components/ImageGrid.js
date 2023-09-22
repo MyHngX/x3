@@ -3,9 +3,8 @@ import ContentLoader from "react-content-loader";
 import { imageListData } from "./images";
 import style from "./style.module.scss";
 import Nav from "./Nav";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function SkeletonLoader() {
   return (
@@ -25,6 +24,10 @@ function SkeletonLoader() {
 function GridImageDisplay() {
   const [searchVal, setValue] = useState("");
   const [images, setImages] = useState(imageListData);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   function handleDragStart(e, index) {
     e.dataTransfer.setData("text/plain", index.toString());
@@ -52,10 +55,11 @@ function GridImageDisplay() {
   }
 
   useEffect(() => {
-    const filteredItems = imageListData.filter(item => item.tag.includes(searchVal));
-    setImages(filteredItems)
-  }, [searchVal]); 
-
+    const filteredItems = imageListData.filter((item) =>
+      item.tag.includes(searchVal)
+    );
+    setImages(filteredItems);
+  }, [searchVal]);
 
   return (
     <>
@@ -63,7 +67,7 @@ function GridImageDisplay() {
       <div className={style.gridContainer}>
         {images.map((imageUrl, index) => (
           <div
-          
+            data-aos="fade-up"
             key={index}
             className={style.gridItem}
             draggable={true}
@@ -72,7 +76,6 @@ function GridImageDisplay() {
             onDragEnter={(e) => handleDragEnter(e)}
             onDragLeave={(e) => handleDragLeave(e)}
             onDrop={(e) => handleDrop(e, index)}
-            
           >
             {/* Display skeleton loader while image is loading */}
             {!imageUrl ? (
