@@ -102,7 +102,7 @@
     border: none;
     font-size: 16px;
     @media screen and (max-width: 568px) {
-      width: 100%;
+      width: 80%;
     }
   }
   .signOut {
@@ -112,5 +112,6 @@
     background: #fff;
     color: #000;
     border: none;
+    flex: 1;
   }
 }
