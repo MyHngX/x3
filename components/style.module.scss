@@ -61,6 +61,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media screen and (max-width: 568px) {
+     width: 80%;
+    }
   }
   p {
     color: #000;
@@ -102,7 +106,8 @@
     border: none;
     font-size: 16px;
     @media screen and (max-width: 568px) {
-      width: 80%;
+      width: inherit;
+      flex: 80%;
     }
   }
   .signOut {
@@ -112,6 +117,9 @@
     background: #fff;
     color: #000;
     border: none;
-    flex: 1;
+   
+    @media screen and (max-width: 568px) {
+      flex: 1;
+    }
   }
 }
