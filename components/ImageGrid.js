@@ -78,10 +78,10 @@ function GridImageDisplay() {
             onDrop={(e) => handleDrop(e, index)}
           >
             {/* Display skeleton loader while image is loading */}
-            {!imageUrl ? (
+            {!imageUrl.path ? (
               <SkeletonLoader />
             ) : (
-              <img src={imageUrl.path || "https://res.cloudinary.com/olasumboeniola/image/upload/v1695371060/images/grey-2_cew7xi.jpg" } alt={`Image ${index}`} />
+              <img src={imageUrl.path || "https://res.cloudinary.com/olasumboeniola/image/upload/v1695371060/images/grey-2_cew7xi.jpg" } alt={`Image ${imageUrl.tag}`} />
             )}
           </div>
         ))}
