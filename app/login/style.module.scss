@@ -124,9 +124,15 @@
           color: #fff;
           font-weight: 800;
           line-height: 35px;
+          border: none;
           cursor: pointer;
           &:focus {
             border-bottom: none;
+          }
+          &:hover{
+            color: #000;
+            border: 1px solid #000;
+            background: #fff;
           }
         }
       }
