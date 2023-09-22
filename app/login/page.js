@@ -9,6 +9,7 @@ export default function Login() {
   const router = useRouter();
   const [values, setValues] = useState({ email: "", password: "" });
   const [error, setError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const validEmail = process.env.email;
   const validPassword = process.env.password;
 
@@ -66,14 +67,25 @@ export default function Login() {
               name="email"
               value={values.email}
               onChange={handleChange}
+              className={style.formInput}
             />
             <input
               placeholder="Password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               value={values.password}
               onChange={handleChange}
+              className={style.formInput}
             />
+            <label className={style.showPassword}>
+              <input
+                type="checkbox"
+                checked={showPassword}
+                onChange={() => setShowPassword(!showPassword)}
+              />
+              <span>Show password</span>
+            </label>
+
             <button
               value={"Login"}
               className={style.submit}
