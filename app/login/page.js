@@ -57,7 +57,9 @@ export default function Login() {
         <div className={style.loginCont}>
           <h3 className={style.title}>Login to continue</h3>
           <form className={style.form}>
-            {error && <p className={style.error} >Email or password is incorrect.</p>}
+            {error && (
+              <p className={style.error}>Email or password is incorrect.</p>
+            )}
             <input
               placeholder="Email Address"
               type="email"
@@ -72,7 +74,12 @@ export default function Login() {
               value={values.password}
               onChange={handleChange}
             />
-            <button  value={"Login"} className={style.submit} onClick={handleSubmission} typee="button" >
+            <button
+              value={"Login"}
+              className={style.submit}
+              onClick={handleSubmission}
+              type="submit"
+            >
               Login
             </button>
           </form>
