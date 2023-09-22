@@ -20,7 +20,6 @@
     border-radius: 8px;
     background: gray;
     cursor: pointer;
-    
   }
   .dragging {
     opacity: 0.7;
@@ -65,14 +64,14 @@
     justify-content: space-between;
 
     @media screen and (max-width: 568px) {
-     width: 80%;
+      width: 80%;
     }
   }
   p {
     color: #000;
     line-height: 30px;
   }
-  button{
+  button {
     background: #000;
     color: #fff;
     padding: 8px 16px;
@@ -82,7 +81,7 @@
     width: 100%;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       background: #fff;
       border: 1px solid #000;
       color: #000;
@@ -109,7 +108,8 @@
     font-size: 16px;
     @media screen and (max-width: 568px) {
       width: inherit;
-      flex: 80%;
+      width: 230px;
+      height: auto;
     }
   }
   .signOut {
@@ -120,7 +120,7 @@
     color: #000;
     border: none;
     width: 70px;
-   
+
     @media screen and (max-width: 568px) {
       flex: 1;
     }
