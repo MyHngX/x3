@@ -33,7 +33,7 @@ export const imageListData = [
   {
     id: 7,
     tag: "grey",
-    path: "/images/grey-5.jpg",
+    path: "https://res.cloudinary.com/olasumboeniola/image/upload/v1695371161/images/grey-4_gd3qgv.jpg",
   },
   {
     id: 8,
