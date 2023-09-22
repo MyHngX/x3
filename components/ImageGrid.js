@@ -64,28 +64,46 @@ function GridImageDisplay() {
   return (
     <>
       <Nav searchVal={searchVal} setValue={setValue} />
-      <div className={style.gridContainer}>
-        {images.map((imageUrl, index) => (
-          <div
-            data-aos="fade-up"
-            key={index}
-            className={style.gridItem}
-            draggable={true}
-            onDragStart={(e) => handleDragStart(e, index)}
-            onDragOver={(e) => handleDragOver(e)}
-            onDragEnter={(e) => handleDragEnter(e)}
-            onDragLeave={(e) => handleDragLeave(e)}
-            onDrop={(e) => handleDrop(e, index)}
-          >
-            {/* Display skeleton loader while image is loading */}
-            {!imageUrl.path ? (
-              <SkeletonLoader />
-            ) : (
-              <img src={imageUrl.path || "https://res.cloudinary.com/olasumboeniola/image/upload/v1695371060/images/grey-2_cew7xi.jpg" } alt={`Image ${imageUrl.tag}`} />
-            )}
+      {images.length == 0 ? (
+        <div className={style.error}>
+          <div className={style.content} >
+            <p>
+              No matching images found <br />
+              Available tags: "Gray", "Purple", "Dark".
+            </p>
+            <button onClick={() => setValue("")} >Close</button>
           </div>
-        ))}
-      </div>
+        </div>
+      ) : (
+        <div className={style.gridContainer}>
+          {images.map((imageUrl, index) => (
+            <div
+              data-aos="fade-up"
+              key={index}
+              className={style.gridItem}
+              draggable={true}
+              onDragStart={(e) => handleDragStart(e, index)}
+              onDragOver={(e) => handleDragOver(e)}
+              onDragEnter={(e) => handleDragEnter(e)}
+              onDragLeave={(e) => handleDragLeave(e)}
+              onDrop={(e) => handleDrop(e, index)}
+            >
+              {/* Display skeleton loader while image is loading */}
+              {!imageUrl.path ? (
+                <SkeletonLoader />
+              ) : (
+                <img
+                  src={
+                    imageUrl.path ||
+                    "https://res.cloudinary.com/olasumboeniola/image/upload/v1695371060/images/grey-2_cew7xi.jpg"
+                  }
+                  alt={`Image ${imageUrl.tag}`}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }
